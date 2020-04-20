@@ -1,6 +1,7 @@
 package com.github.sparsick.openapi.spring.boot.demo.contract.first;
 
 
+import com.google.common.base.Predicates;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -18,6 +19,8 @@ public class OpenApiContractFirstConfiguration {
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
+                .paths(Predicates.not(PathSelectors.ant("/actuator/**")))
+                .paths(Predicates.not(PathSelectors.ant("/error/**")))
                 .build();
     }
 }
