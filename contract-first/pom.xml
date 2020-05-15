@@ -88,10 +88,13 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/resources/openapi.yaml</inputSpec>
                             <generatorName>spring</generatorName>
-<!--                            <generateSupportingFiles>false</generateSupportingFiles>-->
-                            <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+                            <generateSupportingFiles>false</generateSupportingFiles>
                             <apiPackage>de.github.sparsick.openapi.spring.boot.contract.first.api</apiPackage>
                             <modelPackage>de.github.sparsick.openapi.spring.boot.contract.first.model</modelPackage>
+                            <configOptions>
+                                <interfaceOnly>true</interfaceOnly>
+                                <skipDefaultInterface>true</skipDefaultInterface>
+                            </configOptions>
                         </configuration>
                     </execution>
                 </executions>
